@@ -1,0 +1,15 @@
+<div class = "element container rounded mt-md-5 mt-sm-6 mt-xs-8">
+    <div style = "margin-top: 5%;">
+        <select id = "select_tag" class = "form-group" name="charts" (change)="onChange($event.target.value)">
+            <option value="Temperature" selected>Temperature</option>
+            <option value="Pressure">Pressure</option>
+            <option value="Humidity">Humidity</option>
+            <option value="Ozone">Ozone</option>
+            <option value="Visibility">Visibility</option>
+            <option value="WindSpeed">Wind Speed</option>
+        </select>
+    </div>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</div>

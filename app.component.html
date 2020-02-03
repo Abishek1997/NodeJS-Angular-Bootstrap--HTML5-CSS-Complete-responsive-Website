@@ -1,0 +1,95 @@
+<div style = "background-color: #5A88A4; margin-top:20px;" class = "col-md-6 col-sm-7 col-xs-8 container element rounded pt-10 shadow-lg boutline text-light font-weight-normal">
+  <h2 id = "header" class = "text-center">Weather Search</h2>
+  <form [formGroup] = "dataForm" #myForm = "ngForm" novalidate>
+    <div id = "spacingform" class = "form-group row mb-3 ">
+      <label class = "col-md-2 col-form-label"> Street<span id = "redstar">*</span></label>
+      <div  class = "col-md-6"><input [disabled] = "isDisabled" id = "streetNameid" [class.is-invalid] = "dataForm.get('streetName').invalid && dataForm.get('streetName').touched"  formControlName = "streetName" type = "text" placeholder = "Enter Street Name" class = "form-control">
+        <small [class.d-none] = "dataForm.get('streetName').valid || dataForm.get('streetName').untouched || dataForm.get('streetName').disabled" class = "text-danger font-weight-bold">Please enter a street.</small>
+      </div>
+    </div>
+    <div id = "spacingform1" class = "form-group row mb-3">
+        <label class = "col-md-2 col-form-label"> City<span id = "redstar">*</span></label>
+        <div class = "col-md-6">
+          <input [disabled] = "isDisabled" id = "cityNameid" value='' aria-label="Number" [class.is-invalid] = "dataForm.get('cityName').invalid && dataForm.get('cityName').touched" 
+          formControlName = "cityName" type = "text" placeholder="Enter City Name" matInput  [matAutocomplete] = "acxv" class = "form-control">
+            <mat-autocomplete #acxv= "matAutocomplete">
+              <mat-option *ngFor = "let something of (acOptions | async)?.predictions" [value] = "something.structured_formatting.main_text">
+                {{something.structured_formatting.main_text}}
+              </mat-option>
+            </mat-autocomplete>
+          <small [class.d-none] = "dataForm.get('cityName').valid || dataForm.get('cityName').untouched || dataForm.get('streetName').disabled" class = "text-danger font-weight-bold">Please enter a city.</small>
+        </div>
+    </div>
+    <div id = "spacingform1" class = "form-group row mb-3">
+        <label class = "col-md-2 col-form-label"> State<span id = "redstar">*</span></label>
+        <div class = "col-md-4">
+          <select required formControlName = "stateName" class = "form-control" name = "state" id = "stateselect" size =0>
+               <option value = 'Select State'>Select State</option>
+              <option *ngFor="let state of states" [value]="state">{{state}}</option>
+          </select>
+        </div>
+    </div>
+    <div id = "curr" class = "form-group">
+        <input onchange="document.getElementById('searchButton').disabled = !this.checked;" (click) = " onClickCheckbox($event)" id = "checkbox" formControlName = "currentLocation" class = "form-check-input" type = "checkbox">
+        <label style = "margin-right: 10px;">Current Location</label>
+    </div>
+  </form>
+    <div id = "spacingform2">
+      <div class = "btn-group btn-xs">
+        <button #topic id = "searchButton" [disabled] = "myForm.form.invalid || dataForm.value.stateName == 'Select State'" style = "margin-right: 20px;" class = "btn btn-light text-secondary" (click) = "onSubmit(false, {})"><i class="material-icons align-middle">search</i>Search</button>
+      </div>
+      <div class = "btn-group btn-xs text-warning">
+          <button class = "btn btn-light text-secondary" type = "button" (click) = "doClear(myForm)"><i class = "material-icons align-middle">clear_all</i>Clear</button>
+
+      </div>
+    </div>
+</div>
+
+<div id = " btn_wrapper">
+  <div style = "margin-top:5%" class = "d-flex justify-content-center col-md-2 container element rounded mt-sm-4">
+      <div class = "btn-group btn-xs">
+          <button (click) = "onResClick()" id = "results" style = "margin-right: 20px;" class = "btn btn-light colorb" type = "submit">Results</button>
+      </div>
+      <div class = "btn-group btn-xs">
+            <button (click) = "onFavClick()" id = "fav" class = "btn btn-light" type = "submit">Favorites</button>
+      </div>
+  </div> 
+</div>
+
+<div style = "margin-top: 5%;" class ="d-flex justify-content-center mt-md-5">
+  <div class="progress" [class.d-none]="hide_progress" style="width:80%">
+     <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+  </div>
+</div>
+<div style = "width: 100%; height: auto;" [class.d-none] = "favdisplay" class = "mt-sm-5">
+  <app-favcomponent></app-favcomponent>
+</div>
+<div *ngIf = "!wrapper_hide" id = "res_wrapper" class = "col-md-7 col-sm-6 col-xs-6 container element rounded mt-md-3" style="margin-top: 5%;">
+    <div class = "float-right d-flex ml-sm-n5 ml-md-n5">
+        <a id = "twit" class="twitter-share-button rounded float-right" href="https://twitter.com/intent/tweet?text={{twitter_data}}" target = "_blank"><img src="https://img.icons8.com/color/48/000000/twitter.png"></a>
+        <div id = "mf" class = "rounded float-right"><a  (click) = "changeColor()" id = "star_img" style = "margin-left:20%;"><i [class.d-none] = "tog_yellow" style = "margin-top: 15%;" class="material-icons md-36">star_border</i>
+          <i [class.d-none] = "!tog_yellow" style = "margin-top: 15%;color: #ffd633" class="material-icons md-36">star</i>
+        </a>
+      </div>
+    </div>
+    <ngb-tabset [justify] = "center" [activeId] = "activeString">
+        <ngb-tab style="color:black;" id=tab_selectbyid1 title="Current">
+          <ng-template ngbTabContent>
+            <app-tab1></app-tab1>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab_selectbyid2" title = "Hourly">
+          <ng-template ngbTabContent>
+              <app-tab2></app-tab2>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab_selectbyid3" title="Weekly">
+            <ng-template ngbTabContent>
+              <app-tab3></app-tab3>
+            </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+  </div>
+  <div [class.d-none] = "toggle_alert" class="alert alert-warning col-md-7 text-weight-bold rounded container element" role="alert">
+    Invalid Address.
+  </div>

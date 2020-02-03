@@ -1,0 +1,9 @@
+<div class = "mt-sm-5 mt-md-5" id="chartContainer"></div>
+<button id = "btn_modal" class="btn btn-lg btn-outline-primary" [hidden] = "true" (click)="onClick(content)">Launch demo modal</button>
+<ng-template #content let-modal>
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>

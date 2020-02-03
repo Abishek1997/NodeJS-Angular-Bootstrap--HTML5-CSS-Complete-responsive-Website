@@ -1,0 +1,65 @@
+<div id = "modal_header" class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{date}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="_activemodal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div id = "modalbody" class="modal-body">
+    <div class = "h3 font-weight-bold ml-md-3 ml-sm-3">{{city_data}}</div>
+    <table class = "col-md-12">
+        <tr>
+            <td>
+                <div class = "h3 font-weight-normal ml-md-3 ml-sm-3 pt-md-2 pt-sm-2">{{temp}}&#8457;</div>
+            </td>
+            <td align = "center" rowspan=2>
+                <div><img class = "img" src = '{{icon_src}}' width="100" height="100"></div>
+            </td>
+        </tr>
+        <tr>
+            <div class = "font-weight-bold ml-sm-3 ml-md-3 pt-md-2 pt-sm-2">{{summary}}</div>
+        </tr>
+    </table>
+    <hr class = "col-md-11">
+    <table align = "center" class = "media-change pl-md-5 pl-sm-5">
+        <tr>
+            <td>
+                Precipitation : 
+            </td>
+            <td>
+                {{precip}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Chance of Rain : 
+            </td>
+            <td>
+                {{chanceofrain}} %
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Wind Speed : 
+            </td>
+            <td>
+                {{windspeed}} mph
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Humidity : 
+            </td>
+            <td>
+                {{humidity}} %
+            </td>
+        </tr>
+        <tr>
+            <td class = "pb-sm-3 pb-md-3"> 
+                Visibility : 
+            </td>
+            <td class = "pb-sm-3 pb-md-3">
+                {{visibility}} miles
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,68 @@
+<div id = "tab1_wrapper">
+    <div class="card card-body col-md-8 col-sm-8 rounded element container mt-md-5 pt-md-4 pt-sm-4 mb-md-5 mb-sm-5">
+        <div id = "city_name" class="city_name h2 pl-md-2">{{city}}</div>
+        <table>
+            <tr>
+                <td>
+                    <div id = "time_zone" class="time_zone h2 font-weight-normal pl-md-2">{{timeZone}}</div>
+                </td>
+                <td rowspan=3>
+                    <img  id = "img_tag" class = "img rounded element mr-sm-n5" src = {{link}} width = "190" height = "190">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id = "temperature" class = "temperature font-weight-bold h1 pl-md-2 pl-sm-2 pb-sm-3 pb-md-3">{{currentlyTemp}}&#8457;</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id = "summary" class = "summary h4 pl-md-2 pl-sm-2 font-weight-normal">{{currentlySummary}}</div>
+                </td>
+            </tr>
+        </table>
+        <div class = "col-md-12 col-sm-12 pt-sm-5 pt-md-5">
+            <table class = "my_table">
+                <tr class="first_row">
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png" width = "50" height = "50"><span class="tooltiptext">Humidity</span></div></td>
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png" width = "50" height = "50"><span class="tooltiptext">Pressure</span></div></td>
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png" width = "50" height = "50"><span class="tooltiptext">WindSpeed</span></div></td>
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png" width = "50" height = "50"><span class="tooltiptext">Visibility</span></div></td>
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png" width = "50" height = "50"><span class="tooltiptext">CloudCover</span></div></td>
+                    <td align="left"><div class = "tool"><img class = "img" src = "https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png" width = "50" height = "50"><span class="tooltiptext">Ozone</span></div></td>
+                </tr>
+                <tr id = "second_row" class = "second_row h5 font-weight-normal pt-md-3 pt-sm-3">
+                    <td align="left"><div class = "text" id = "data_humidity">{{currentlyHumidity}}</div></td>
+                    <td align="left"><div class = "text" id = "data_pressure">{{currentlyPressure}}</div></td>
+                    <td align="left"><div class = "text" id = "data_windspeed">{{currentlyWindSpeed}}</div></td>
+                    <td align="left"><div class = "text" id = "data_visibility">{{currentlyVisibility}}</div></td>
+                    <td align="left"><div class = "text" id = "data_cloudcover">{{currentlyCloudCover}}</div></td>
+                    <td align="left"><div class = "text" id = "data_ozone">{{currentlyOzone}}</div></td>
+                </tr>
+            </table> 
+        </div>
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {{parentData}}
+{{timeZone}}
+{{currentlyTemp}}
+{{currentlySummary}}
+{{currentlyHumidity}}
+{{currentlyPressure}}
+{{currentlyWindSpeed}}
+{{currentlyVisibility}}
+{{currentlyCloudCover}} -->

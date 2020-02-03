@@ -1,0 +1,96 @@
+#redstar{
+    color:red;
+}
+
+#header{
+    font-size: 38px;
+    padding-top: 6%;
+}
+
+#spacingform{
+    padding-top: 4%;
+    padding-left: 10%;
+}
+
+#spacingform1{
+    /* padding-top: %; */
+    padding-left: 10%;
+}
+
+#spacingform2{
+    /* padding-top: %; */
+    padding-left: 10%;
+    padding-bottom: 7%;
+}
+
+.btn{
+    border: 1px solid black;
+}
+.boutline{
+    border-radius: 10px;
+    border: 1.5px solid black;
+    box-shadow:  4px 4px solid gray;
+}
+
+#stateselect{
+    width: 100%;
+}
+
+.colorb{
+    background-color: #5A88A4;
+    color:white;
+}
+
+::ng-deep a  {
+    color: black
+  }
+
+  ::ng-deep a:hover{
+    color: black;
+  }
+
+  .margin-left{
+    margin-left: -20px;
+  }
+
+  .material-icons.md-dark { 
+      color: black;
+      background: none;
+     }
+
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+
+.yellow{
+    color:yellow;
+}
+
+.white{
+    color: white;
+}
+a:hover {
+    cursor: pointer;
+}
+
+#curr{
+    padding-left: 12%;
+}
+
+@media only screen and (max-width: 768px){
+    #twit{
+        margin-left : -25%;
+        width: 20px;
+        height: 20px;
+    }
+    
+
+    #curr{
+        padding-left: 15%;
+    }
+
+    #mf{
+        margin-left: 30%;
+    }
+
+}   

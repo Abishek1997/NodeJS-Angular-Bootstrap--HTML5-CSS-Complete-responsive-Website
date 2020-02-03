@@ -1,0 +1,29 @@
+<ng-template *ngIf = "favdata.length == 0; then trueblock; else falseblock"></ng-template>
+
+<ng-template #trueblock>
+    <div style = "margin-top: 3%;" [class.d-none] = "toggle_alert" class="alert alert-warning col-md-7 text-weight-bold rounded container element" role="alert">
+        No records.
+    </div>
+</ng-template>
+
+<ng-template #falseblock>
+<div style = "margin-top: 3%;" class = "container element rounded">
+    <table class = "fav_header table table-striped">
+        <thead>
+        <tr>
+            <th  class = "fav_body font-weight-bold" *ngFor = "let i of tableHeader">{{i}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class = "fav_body" *ngFor = "let data of favdata; index as i">
+            <td class = "font-weight-bold">{{i+1}}</td>
+            <td><img height="30" width="30" src = {{data.link}}></td>
+            <!-- class="red-tooltip" data-toggle="tooltip" data-placement="bottom" title="{{data.city}} -->
+            <td style="white-space: nowrap; overflow:hidden;"><a  class = "tool" href = "#" id = "cityclick" (click)="onCityClick(data)">{{data.city}}<div class = "rounded element container tooltiptext">{{data.city}}</div></a></td>
+            <td class = "font-weight-bold">{{data.state}}</td>
+            <td><button (click) = "ondelClick(data)" class = "btn btn-sm"><i class = " align-middle material-icons" style = "color: #DBA421; background-color: white;">delete</i></button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+</ng-template>

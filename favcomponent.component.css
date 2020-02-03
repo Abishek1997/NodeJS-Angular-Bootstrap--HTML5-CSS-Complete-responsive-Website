@@ -1,0 +1,29 @@
+.fav_header{
+    background-color: #5A88A4;
+}
+
+.fav_body{
+    background-color: #5A88A4;
+}
+
+#cityclick{
+    color: #3641DA;
+    font-weight: bolder;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.tool .tooltiptext {
+    visibility: hidden;
+    text-align: center;
+    color: white;
+    background-color: black;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.tool:hover .tooltiptext {
+    visibility: visible;
+}

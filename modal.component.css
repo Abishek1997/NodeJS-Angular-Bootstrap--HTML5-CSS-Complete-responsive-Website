@@ -1,0 +1,13 @@
+#modal_header{
+    background-color: #5A88A4;
+}
+
+#modalbody{
+    background-color: #91CBF0;
+}
+
+@media only screen and (max-width: 768px){
+    .media-change{
+        margin-left: 0%;
+    }   
+}

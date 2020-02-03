@@ -1,0 +1,77 @@
+.tool .tooltiptext {
+    visibility: hidden;
+    text-align: center;
+    color: white;
+    background-color: black;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.tool:hover .tooltiptext {
+    visibility: visible;
+}
+
+.card{
+    background-color: #91CBF0;
+}
+
+.time_zone{
+    color: #26484B;
+}
+
+.card{
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+tr.first_row>td{
+    padding-bottom: 0.3em;
+}
+
+tr.second_row>td{
+    padding-left: 0.3em;
+}
+
+.my_table{
+    margin-left : 3.5%;
+}
+@media only screen and (max-width: 768px){
+    #city_name{
+        font-size: 5.2vw;
+        font-weight: 600;
+    }
+    #time_zone{
+        margin-left: auto;
+        font-size: 5.1vw;
+    }
+    #img_tag{
+        margin-top : -1%;
+        position : relative;
+        width: 125px;
+        height: 130px;
+    }
+    #temperature{
+        margin-left: -76%;
+        font-size: 5.4vw;
+        font-weight: bold;
+    }
+    #summary{
+        margin-left: -40%;
+        font-size: 4.8vw;
+    }
+    .img{
+        margin-top : 40%;
+        width: 30px;
+        height: 30px;
+    }
+    .text{
+        font-size: 3.3vw;
+    }
+    td{
+        text-align: center;
+    }
+    .my_table{
+        margin-left :-10%;
+        margin-right : -6%
+    }
+}
